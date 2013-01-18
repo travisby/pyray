@@ -13,11 +13,15 @@ class PyRay:
 
     _obj = collections.OrderedDict()
 
+    def extend(self, iterable):
+        """Add each item of an iterable to ourself"""
+        for item in iterable:
+            self[''] = item
+
     def keys(self):
         """Returns a list of our keys"""
         array = PyRay()
-        for key in self._obj.keys():
-            array[''] = key
+        array.extend(self._obj.keys())
         return array
 
     def _get_int_keys(self):
