@@ -23,12 +23,14 @@ class PyRay:
     def _get_largest_int_key(self):
         """Return the largest of our integer keys"""
         keys = self._get_int_keys()
-        keys.sort()
-        return keys[-1]
+        if keys:
+            keys.sort()
+            return keys[-1]
+        return -1  # So the "next largest" is 0
 
     def _get_next_largest_int_key(self):
         """Return the next numerical index"""
-        return self._get_largest_int_key + 1
+        return self._get_largest_int_key() + 1
 
     def __init__(self):
         """Sets our data members to their default state"""
