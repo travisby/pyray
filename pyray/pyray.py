@@ -58,3 +58,7 @@ class PyRay:
     def __setitem__(self, key, value):
         """Sets key => value"""
         self._obj[key] = value
+
+    def __delitem__(self, key):
+        """Delets a key"""
+        del(self._obj[key])
