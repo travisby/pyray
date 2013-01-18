@@ -56,6 +56,11 @@ class PyRay:
 
     def __getitem__(self, key):
         """Attempts to access based on the provided index"""
+        # PHP would attempt to convert keys to integers...
+        try:
+            key = int(key)
+        except ValueError:
+            pass
         try:
             return self._obj[key]
         except KeyError:
