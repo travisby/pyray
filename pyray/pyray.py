@@ -56,8 +56,13 @@ class PyRay:
             raise UndefinedIndex
 
     def __setitem__(self, key, value):
-        """Sets key => value"""
-        self._obj[key] = value
+        """Sets key => value
+        except when key = '', which grabs the next largest numeral
+        """
+        if key:
+            self._obj[key] = value
+        else:
+            self._obj[self._get_next_largest_int_key()] = value
 
     def __delitem__(self, key):
         """Delets a key"""
