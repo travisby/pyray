@@ -12,6 +12,20 @@ class PyRay:
 
     _obj = collections.OrderedDict()
 
+    def _get_int_keys(self):
+        """Return a list of the integer keys"""
+        return [x for x in self._obj.keys() if isinstance(x, int)]
+
+    def _get_largest_int_key(self):
+        """Return the largest of our integer keys"""
+        keys = self._get_int_keys()
+        keys.sort()
+        return keys[-1]
+
+    def _get_next_largest_int_key(self):
+        """Return the next numerical index"""
+        return self._get_largest_int_key + 1
+
     def __init__(self):
         """Sets our data members to their default state"""
         self._obj = collections.OrderedDict()
