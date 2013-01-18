@@ -27,6 +27,7 @@ def array_change_key_case(array, case=CASE_LOWER):
 
     if case == CASE_LOWER:
         func = string.lower
+    # PHP uses upper on any case that is not CASE_LOWER
     else:
         func = string.upper
 
