@@ -32,9 +32,11 @@ class PyRay:
         """Return the next numerical index"""
         return self._get_largest_int_key() + 1
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """Sets our data members to their default state"""
         self._obj = collections.OrderedDict()
+        [self.__setitem__('', arg) for arg in args]
+        [self.__setitem__(kwarg[0], kwarg[1]) for kwarg in kwargs.items()]
 
     def __repr__(self):
         """Used for a string representation"""
