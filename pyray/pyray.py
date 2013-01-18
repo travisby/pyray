@@ -1,5 +1,6 @@
 """Utilities for our python PHP array"""
 import collections
+import numbers
 
 
 class UndefinedIndex(KeyError):
@@ -18,7 +19,7 @@ class PyRay:
 
     def _get_int_keys(self):
         """Return a list of the integer keys"""
-        return [x for x in self._obj.keys() if isinstance(x, int)]
+        return [x for x in self._obj.keys() if isinstance(x, numbers.Number)]
 
     def _get_largest_int_key(self):
         """Return the largest of our integer keys"""
