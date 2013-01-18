@@ -66,3 +66,9 @@ class PyRay:
     def __iter__(self):
         """Returns an iterator over our keys"""
         return self._obj.iterkeys()
+
+    def __contains__(self, item):
+        """Returns whether or not an element exists in our array"""
+        # Note that php's in_array() checks values, not keys like python
+        # usually does
+        return item in self._obj.values()
