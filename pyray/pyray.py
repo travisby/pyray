@@ -2,6 +2,11 @@
 import collections
 
 
+class UndefinedIndex(KeyError):
+    """Raised when a requested index does not exist"""
+    pass
+
+
 class PyRay:
     """PHP Array in Python"""
 
@@ -26,3 +31,10 @@ class PyRay:
     def __len__(self):
         """What we interpret our size to be"""
         return len(self._obj.keys())
+
+    def __getitem__(self, key):
+        """Attempts to access based on the provided index"""
+        try:
+            return self._obj[key]
+        except KeyError:
+            raise UndefinedIndex
