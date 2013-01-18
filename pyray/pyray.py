@@ -58,8 +58,16 @@ class PyRay:
     def __setitem__(self, key, value):
         """Sets key => value
         except when key = '', which grabs the next largest numeral
+        will convert strings to numbers  wherever possible
         """
         if key:
+            # PHP will convert strings to number keys if possible
+            # int() will convert to long if the key is too large
+            try:
+                key = int(key)
+            except ValueError:
+                # guess we can't convert it :P
+                pass
             self._obj[key] = value
         else:
             self._obj[self._get_next_largest_int_key()] = value
