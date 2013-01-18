@@ -3,5 +3,6 @@
 
 class PyRay:
     """PHP Array in Python"""
-    pass
 
+    def __init__(self):
+        pass
