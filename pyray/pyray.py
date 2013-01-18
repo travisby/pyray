@@ -31,12 +31,14 @@ class PyRay:
         self._obj = collections.OrderedDict()
 
     def __repr__(self):
+        """Used for a string representation"""
         header = 'PyRay(%(len)s) {' % {'len': len(self)}
         body = ''.join([self._repr_body(item) for item in self._obj.items()])
         return '%s %s \n }' % (header, body)
 
-
-    def _repr_body(self, item):
+    @staticmethod
+    def _repr_body(item):
+        """Partial for __repr__"""
         return (
             '\n\t["%(key)s"]=>\n\t%(type)s %(val)s' %
             {'key': item[0], 'type': type(item[1]), 'val': item[1]}
