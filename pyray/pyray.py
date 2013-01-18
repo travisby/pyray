@@ -77,8 +77,8 @@ class PyRay:
         del(self._obj[key])
 
     def __iter__(self):
-        """Returns an iterator over our keys"""
-        return self._obj.iterkeys()
+        """Returns an iterator over our values"""
+        return self._obj.itervalues()
 
     def __contains__(self, item):
         """Returns whether or not an element exists in our array"""
