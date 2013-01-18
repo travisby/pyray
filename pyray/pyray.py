@@ -4,5 +4,8 @@
 class PyRay:
     """PHP Array in Python"""
 
+    _obj = {}
+
     def __init__(self):
-        pass
+        """Sets our data members to their default state"""
+        self._obj = {}
