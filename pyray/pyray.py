@@ -12,6 +12,10 @@ class PyRay:
 
     _obj = collections.OrderedDict()
 
+    def keys(self):
+        """Returns a list of our keys"""
+        return self._obj.keys()
+
     def _get_int_keys(self):
         """Return a list of the integer keys"""
         return [x for x in self._obj.keys() if isinstance(x, int)]
