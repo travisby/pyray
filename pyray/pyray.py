@@ -10,3 +10,7 @@ class PyRay:
     def __init__(self):
         """Sets our data members to their default state"""
         self._obj = collections.OrderedDict()
+
+    def __len__(self):
+        """What we interpret our size to be"""
+        return len(self._obj.keys())
