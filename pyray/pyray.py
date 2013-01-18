@@ -62,3 +62,7 @@ class PyRay:
     def __delitem__(self, key):
         """Delets a key"""
         del(self._obj[key])
+
+    def __iter__(self):
+        """Returns an iterator over our keys"""
+        return self._obj.iterkeys()
