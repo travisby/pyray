@@ -54,3 +54,7 @@ class PyRay:
             return self._obj[key]
         except KeyError:
             raise UndefinedIndex
+
+    def __setitem__(self, key, value):
+        """Sets key => value"""
+        self._obj[key] = value
